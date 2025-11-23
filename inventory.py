@@ -1,7 +1,7 @@
 #In this space, the idea is to welcome you.
 print("Welcome to the inventory".upper().center(50))
 
-#We request the main data with variables.
+#I request the main data with variables.
 #Here I put the information about the product and price
 name=input("name of the product: ")
 price=input("price of the product in COP: ")
@@ -32,3 +32,4 @@ print(f"| {'Product':15}| {name:<10}|\
       \n| {'Price':15}| {price:<10}|\
       \n| {'Quantity':15}| {quantity:<10}|\
       \n| {'Total price':15}| \033[32m{total:<10}\033[0m|\n")
+
