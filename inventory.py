@@ -1,22 +1,34 @@
 #In this space, the idea is to welcome you.
-print("Welcome to the inventory")
+print("Welcome to the inventory".upper().center(50))
 
 #We request the main data with variables.
 #Here I put the information about the product and price
-name=str(input("name of the product: "))
-price=float(input("price of the product in COP: "))
+name=input("name of the product: ")
+price=input("price of the product in COP: ")
 
 #While serves as a guide becouse I don't knowwhich product
-while price <20000:
-    print("Enter a valid value")
-    price=float(input("put the valid value: "))
-   
-quantity=int(input("quantity of product: "))
+while price.replace (".","").isdigit()==False:
+    print("\033[31mPlease put just numbers\033[0m")
+    price=input("Put tha price again: ")
 
-total_price= price*quantity 
-print("\n product description".upper()+"\n")
+price=float(price)
+quantity=input("Enter the quantity: ")
 
-print(f"| {'Product name':15}| {name:<10}|\
+#Here I validate the quantity 
+while quantity.isdigit()==False:
+    print("\033[31mPlease put just number\033[0m")
+    quantity=input("Enter the quantity again: ")
+
+quantity=int(quantity)
+
+total=price*quantity
+
+#Summary of the product
+print("\n" + "-" * 30)
+print("Product description".upper().center(30))
+print("-" * 30)
+
+print(f"| {'Product':15}| {name:<10}|\
       \n| {'Price':15}| {price:<10}|\
       \n| {'Quantity':15}| {quantity:<10}|\
-      \n| {'Total price':15}| {total_price:<10}|")
+      \n| {'Total price':15}| \033[32m{total:<10}\033[0m|\n")
